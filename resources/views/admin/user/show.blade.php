@@ -32,10 +32,17 @@
                           <p class="mb-0 dark:text-white/80">{{ $user->email }}</p>
                         </div>
                       </div>
+                      @php
+                                if($user->role == 1){
+                                $role = 'Admin';
+                                }else {
+                                    $role = 'User';
+                                }
+                            @endphp
                       <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
                         <div class="mb-4">
                           <label for="first name" class="inline-block mb-2  font-bold text-xs text-slate-700 dark:text-white/80">Role</label>
-                          <p class="mb-0 dark:text-white/80">Admin</p>
+                          <p class="mb-0 dark:text-white/80">{{ $role }}</p>
                         </div>
                       </div>
                     </div>
