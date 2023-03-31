@@ -61,7 +61,7 @@
                                 <a href="user/{{ $user->id }}" class="text-xs font-semibold leading-tight"> Edit </a>
 
                                 <form action="/user/{{ $user->id }}" method="delete" class="inline-block">
-                                    <button class=" mx-2 text-xs font-semibold leading-tight"> Delete </button>
+                                    <button type="submit" class=" mx-2 text-xs font-semibold leading-tight"> Delete </button>
                                 </form>
 
                               </td>

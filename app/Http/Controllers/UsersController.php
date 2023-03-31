@@ -31,19 +31,14 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'role' => ['required']
+        $validatedData = $request->validate([
+            'name' => ['required','max:255'],
+            'email' => ['required', 'max:255', 'unique:'],
+            'password' => ['required',],
+            'role' => ['required','boolean'],
         ]);
-
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'role' => $request->role
-        ]);
+        $validatedData['password'] = Hash::make($validatedData['password']);
+        User::create($validatedData);
         return redirect('/dashboard/user')->with('success','New User has been added');
     }
 
@@ -79,7 +74,7 @@ class UsersController extends Controller
      */
     public function destroy(User $user)
     {
-        Movie::destroy($id);
-        return redirect('/dashboard/movies')->with('success','movie had been deleted');
+        User::destroy($id);
+        return redirect('/dashboard/user')->with('success','movie had been deleted');
     }
 }

@@ -1,17 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Movie;
-use Illuminate\Http\Request;
 
-class MoviesController extends Controller
+use App\Models\Movie;
+use App\Http\Requests\StoreMovieRequest;
+use App\Http\Requests\UpdateMovieRequest;
+
+class MovieController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.movie.index');
+        //
     }
 
     /**
@@ -19,13 +21,13 @@ class MoviesController extends Controller
      */
     public function create()
     {
-        return view('admin.movie.create');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreMovieRequest $request)
     {
         //
     }
@@ -33,15 +35,15 @@ class MoviesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Movie $movie)
     {
-        return view('admin.movie.show');
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Movie $movie)
     {
         //
     }
@@ -49,7 +51,7 @@ class MoviesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateMovieRequest $request, Movie $movie)
     {
         //
     }
@@ -57,7 +59,7 @@ class MoviesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Movie $movie)
     {
         //
     }
