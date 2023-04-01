@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('movie', function (Blueprint $table) {
+        Schema::create('movies', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->integer('rate');
+            $table->string('title')->default('-');
+            $table->string('sinopsis')->default('no sinaposis yet');
+            $table->string('genre')->default('no genre yet');
+            $table->string('actor')->default('no actor yet');
+            $table->string('poster')->default('default-poster.jpg');
+            $table->integer('rate')->default(1);
             $table->timestamps();
         });
     }

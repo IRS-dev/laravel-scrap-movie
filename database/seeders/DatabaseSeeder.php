@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 use Illuminate\Support\Facades\Hash;
-
+use Illuminate\Support\Str;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -27,6 +27,23 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin321@gmail.com',
             'password'=> Hash::make('admin321'),
             'role' => 0
+        ]);
+
+        \App\Models\Movie::create([
+            'title' => 'avenger',
+            'rate' => 9,
+            'sinopsis' => Str::random(100),
+            'genre' =>  Str::random(5),
+            'actor' =>  Str::random(5),
+            'poster' => 'default-poster.jpg',
+        ]);
+        \App\Models\Movie::create([
+            'title' => 'Harry Potter',
+            'rate' => 8,
+            'sinopsis' => Str::random(100),
+            'genre' =>  Str::random(5),
+            'actor' =>  Str::random(5),
+            'poster' => 'default-poster.jpg',
         ]);
     }
 }

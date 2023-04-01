@@ -11,7 +11,10 @@ class MoviesController extends Controller
      */
     public function index()
     {
-        return view('admin.movie.index');
+
+        return view('admin.movie.index',[
+            'movies' => Movie::all()
+        ]);
     }
 
     /**
@@ -19,7 +22,7 @@ class MoviesController extends Controller
      */
     public function create()
     {
-        return view('admin.movie.show');
+        return view('admin.movie.create');
     }
 
     /**
@@ -27,16 +30,27 @@ class MoviesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => ['required','max:255'],
+            'actor' => ['required','max:255'],
+            'genre' => ['required', 'max:255'],
+            'poster' => ['required'],
+            'rating' =>['required'],
+            'sinopsis'=> ['required'],
+        ]);
+        Movie::create($validatedData);
+        return redirect('/dashboard/movie')->with('success');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
+        return view('admin.movie.show',[
+            'movie' => Movie::find($id)
+        ]);
 
-        return view('admin.movie.create');
 
     }
 
@@ -59,8 +73,9 @@ class MoviesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        Movie::destroy($id);
+        return redirect('/dashboard/movie')->with('success');
     }
 }

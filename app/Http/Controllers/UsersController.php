@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -33,7 +34,7 @@ class UsersController extends Controller
     {
         $validatedData = $request->validate([
             'name' => ['required','max:255'],
-            'email' => ['required', 'max:255', 'unique:'],
+            'email' => ['required','max:255','unique:users'],
             'password' => ['required',],
             'role' => ['required','boolean'],
         ]);
@@ -56,7 +57,7 @@ class UsersController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit($id)
     {
         //
     }
@@ -72,7 +73,7 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
         User::destroy($id);
         return redirect('/dashboard/user')->with('success','movie had been deleted');

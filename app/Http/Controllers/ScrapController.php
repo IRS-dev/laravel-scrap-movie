@@ -16,9 +16,11 @@ class ScrapController extends Controller
         $scrap = $crawler->filter('.titleColumn')->each(function ($node) {
             return$node->text();
           });
-        dd($scrap);
-        return view('dashboard/build/index',[
-            'title' => $title
+
+         $collection = collect($scrap);
+         $title = $collection->take(12);
+        return view('dashboard/build/index')->with([
+            'movieTitle' => $title
         ]);
 }
 
