@@ -24,8 +24,9 @@ class ScrapController extends Controller
 
 public function linkScrap(Request $request)
 {
-    return view('admin.scrap.link')
+    return view('admin.scrap.index');
 }
+
 
 
 

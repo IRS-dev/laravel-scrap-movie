@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
 Route::resource('/dashboard/movie', MoviesController::class)->middleware('auth');
 Route::resource('/dashboard/user', UsersController::class)->middleware('auth');
 
-
+Route::get('/dashboard/scrap/imdb', [ScrapController::class, 'getMovie'])->middleware('auth');
+Route::get('/dashboard/scrap',[ScrapController::class, 'linkScrap'])->middleware('auth');
 
 require __DIR__.'/auth.php';
