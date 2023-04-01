@@ -19,7 +19,7 @@ class MoviesController extends Controller
      */
     public function create()
     {
-        return view('admin.movie.create');
+        return view('admin.movie.show');
     }
 
     /**
@@ -35,7 +35,9 @@ class MoviesController extends Controller
      */
     public function show(string $id)
     {
-        return view('admin.movie.show');
+
+        return view('admin.movie.create');
+
     }
 
     /**

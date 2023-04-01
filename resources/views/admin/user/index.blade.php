@@ -59,8 +59,7 @@
                                   </td>
                             <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                                 <a href="user/{{ $user->id }}" class="text-xs font-semibold leading-tight"> Edit </a>
-
-                                <form action="/user/{{ $user->id }}" method="delete" class="inline-block">
+                                <form action="user/{{ $user->id }}" method="delete" class="inline-block">
                                     <button type="submit" class=" mx-2 text-xs font-semibold leading-tight"> Delete </button>
                                 </form>
 

@@ -33,4 +33,5 @@ Route::resource('/dashboard/movie', MoviesController::class)->middleware('auth')
 Route::resource('/dashboard/user', UsersController::class)->middleware('auth');
 
 
+
 require __DIR__.'/auth.php';
