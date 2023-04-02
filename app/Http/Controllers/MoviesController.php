@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use App\Exports\MoviesExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MoviesController extends Controller
 {
+    public function movieExport()
+    {
+        return Excel::download(new MoviesExport, 'movie.xlsx');
+    }
+
     /**
      * Display a listing of the resource.
      */

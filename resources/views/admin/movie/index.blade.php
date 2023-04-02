@@ -4,7 +4,7 @@
       <!-- cards -->
       {{-- popular Movie --}}
       <a href="movie/create" class="inline-block px-8 py-2 mt-3 ml-12 font-bold leading-normal text-center text-dark align-middle transition-all ease-in bg-white border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">&plus; Create Movie Data</a>
-      <a href="wkwk" class="inline-block px-8 py-2 mt-3 ml-6 font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-cyan-500 border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Export Movie</a>
+      <a href="/dashboard/movieexport" class="inline-block px-8 py-2 mt-3 ml-6 font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-cyan-500 border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Export Movie</a>
       {{-- table --}}
       <div class="w-full px-6 py-6 mx-auto">
         <!-- table 1 -->

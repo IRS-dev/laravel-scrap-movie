@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\ScrapController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,7 +33,10 @@ Route::middleware('auth')->group(function () {
 Route::resource('/dashboard/movie', MoviesController::class)->middleware('auth');
 Route::resource('/dashboard/user', UsersController::class)->middleware('auth');
 
+// Scrap
 Route::get('/dashboard/scrap/imdb', [ScrapController::class, 'getMovie'])->middleware('auth');
 Route::get('/dashboard/scrap',[ScrapController::class, 'linkScrap'])->middleware('auth');
-
+// Export
+Route::get('/dashboard/userexport',[UsersController::class, 'userExport'])->middleware('auth');
+Route::get('/dashboard/movieexport',[MoviesController::class, 'movieExport'])->middleware('auth');
 require __DIR__.'/auth.php';

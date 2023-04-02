@@ -4,7 +4,7 @@
       <!-- cards -->
       {{-- popular Movie --}}
       <a href="user/create" class="inline-block px-8 py-2 mt-3 ml-12 font-bold leading-normal text-center text-dark align-middle transition-all ease-in bg-white border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85"> &plus; Create Data User</a>
-      <a href="wkwk" class="inline-block px-8 py-2 mt-3 ml-6 font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-cyan-500 border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Export User</a>
+      <a href="/dashboard/userexport" class="inline-block px-8 py-2 mt-3 ml-6 font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-cyan-500 border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Export User</a>
       {{-- table --}}
       <div class="w-full px-6 py-6 mx-auto">
         <!-- table 1 -->
@@ -59,7 +59,7 @@
                                   </td>
                             <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                                 <a href="user/{{ $user->id }}" class=" mx-2 text-xs  text-white  font-semibold leading-tight bg-blue-500 rounded px-2"> Detail </a>
-                                <a href="user/{{ $user->id }}" class=" mx-2 text-xs font-semibold leading-tight bg-black rounded px-2 text-white"> Edit </a>
+                                <a href="user/{{ $user->id }}/edit" class=" mx-2 text-xs font-semibold leading-tight bg-black rounded px-2 text-white"> Edit </a>
                                 <form action="user/{{ $user->id }}" method="post" class="inline-block">
                                     @method('delete')
                                     @csrf
