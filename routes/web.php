@@ -34,7 +34,8 @@ Route::resource('/dashboard/movie', MoviesController::class)->middleware('auth')
 Route::resource('/dashboard/user', UsersController::class)->middleware('auth');
 
 // Scrap
-Route::get('/dashboard/scrap/imdb', [ScrapController::class, 'getMovie'])->middleware('auth');
+Route::post('/dashboard/scrap/imdb', [ScrapController::class, 'getMovie'])->middleware('auth');
+Route::post('/dashboard/scrap', [ScrapController::class, 'scrapMovie'])->middleware('auth');
 Route::get('/dashboard/scrap',[ScrapController::class, 'linkScrap'])->middleware('auth');
 // Export
 Route::get('/dashboard/userexport',[UsersController::class, 'userExport'])->middleware('auth');
