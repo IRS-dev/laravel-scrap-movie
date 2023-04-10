@@ -3,7 +3,7 @@
       <!-- end Navbar -->
       <!-- cards -->
       {{-- popular Movie --}}
-      <a href="movie/create" class="inline-block px-8 py-2 mt-3 ml-12 font-bold leading-normal text-center text-dark align-middle transition-all ease-in bg-white border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">&plus; Create Movie Data</a>
+      <a href="/dashboard/movie/create" class="inline-block px-8 py-2 mt-3 ml-12 font-bold leading-normal text-center text-dark align-middle transition-all ease-in bg-white border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">&plus; Create Movie Data</a>
       <a href="/dashboard/movieexport" class="inline-block px-8 py-2 mt-3 ml-6 font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-cyan-500 border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Export Movie</a>
       {{-- table --}}
       <div class="w-full px-6 py-6 mx-auto">
@@ -45,14 +45,14 @@
                               </div>
                             </td>
                             <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                                <h6 class="mb-0 text-sm leading-normal dark:text-white">{{ $movie->rate }}</h6>
+                                <h6 class="mb-0 text-sm leading-normal dark:text-white">{{ $movie->rating }}</h6>
                             </td>
                             {{-- <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                               <span class="bg-gradient-to-tl from-emerald-500 to-teal-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold  leading-none text-white">Admin</span>
                             </td> --}}
                             <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                                 <a href="movie/{{ $movie->id }}" class=" mx-2 text-xs  text-white  font-semibold leading-tight bg-blue-500 rounded px-2"> Detail </a>
-                                <a href="movie/{{ $movie->id }}" class=" mx-2 text-xs font-semibold leading-tight bg-black rounded px-2 text-white"> Edit </a>
+                                <a href="movie/{{ $movie->id }}/edit" class=" mx-2 text-xs font-semibold leading-tight bg-black rounded px-2 text-white"> Edit </a>
                                 <form action="movie/{{ $movie->id }}" method="post" class="inline-block">
                                     @method('delete')
                                     @csrf

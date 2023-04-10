@@ -64,17 +64,29 @@ class MoviesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        return view('admin.movie.edit',[
+            'movie' => Movie::find($id)
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request,Movie $movie)
     {
-        //
+
+        
+        $validatedData = $request->validate([
+            'title' => ['required','max:255'],
+            'actor' => ['required','max:255'],
+            'genre' => ['required', 'max:255'],
+            'rating' =>['required'],
+            'sinopsis'=> ['required'],
+        ]);
+        Movie::where('id',$movie->id)->update($validatedData);
+        return redirect('/dashboard/movie');
     }
 
     /**

@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\Movie::create([
             'title' => 'avenger',
-            'rate' => 9,
+            'rating' => 9,
             'sinopsis' => Str::random(100),
             'genre' =>  Str::random(5),
             'actor' =>  Str::random(5),
@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
         ]);
         \App\Models\Movie::create([
             'title' => 'Harry Potter',
-            'rate' => 8,
+            'rating' => 8,
             'sinopsis' => Str::random(100),
             'genre' =>  Str::random(5),
             'actor' =>  Str::random(5),

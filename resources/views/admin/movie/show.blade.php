@@ -23,12 +23,13 @@
               <h5 class="text-blue-500 ">
                {{ $movie->title }}
               </h5>
+              <h6 class="text-white text-lg">Sinopsis</h6>
               <p class="text-white text-sm text-light">{{ $movie->sinopsis }}</p>
               <span class="text-white text-sm text-light opacity-80 block"> Genre : {{ $movie->genre }}</span>
 
               <span class="text-white text-sm text-light opacity-80 block"> Actor : {{ $movie->actor }}</span>
 
-                <span class="text-white text-sm text-light opacity-80 block"> Rating : {{ $movie->rate }}</span>
+                <span class="text-white text-sm text-light opacity-80 block"> Rating : {{ $movie->rating }}</span>
             </div>
           </div>
         </div>

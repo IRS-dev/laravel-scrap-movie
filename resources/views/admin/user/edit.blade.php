@@ -11,7 +11,7 @@
             <div class="flex items-center">
                 <a href="/dashboard/user/{{ $user->id }}">d</a>
               <p class="mb-0 dark:text-white/80">Edit User</p>
-              <button type="submit" class="inline-block px-8 py-2 mb-4 ml-auto font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-blue-500 border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Create</button>
+              <button type="submit" class="inline-block px-8 py-2 mb-4 ml-auto font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-blue-500 border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Edit</button>
             </div>
           </div>
           <div class="flex-auto p-6">
