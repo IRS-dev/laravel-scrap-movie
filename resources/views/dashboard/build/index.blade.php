@@ -3,6 +3,9 @@
       <!-- end Navbar -->
       <!-- cards -->
       {{-- popular Movie --}}
+      @if($moviesTitle = [])
+      <h6 class="dark:text-white">belum ada judul Film</h6>
+      @endif
 
       <h6 class=" ml-12 mb-0 font-bold text-dark capitalize">Popular Movie</h6>
       <div class="w-full px-6 py-2 mx-auto">

@@ -6,7 +6,7 @@
       <a href="/dashboard/movie" class="inline-block px-8 py-2 mt-3 ml-12 font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-cyan-500 border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Back to Movie List</a>
       <div class=" mt-6 mx-4 py-2 w-full max-w-full px-3 mt-6 shrink-0 md:w-4/12 md:flex-0 md:mt-0">
         <div class=" flex flex-col min-w-0 break-words bg-black border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
-          <img class="w-full rounded-t-2xl" src="{{ asset('build/assets/img/'.$movie->poster.'')}}" alt="profile cover image">
+          <img class="w-full rounded-t-2xl" src="{{ asset('storage/'.$movie->poster)}}" alt="profile cover image">
           <div class="border-black/12.5 rounded-t-2xl p-6 text-center pt-0 pb-6 lg:pt-2 lg:pb-4">
             {{-- <div class="flex justify-between">
               <button type="button" class="hidden px-8 py-2 font-bold leading-normal text-center text-white align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer text-xs bg-cyan-500 lg:block tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Connect</button>

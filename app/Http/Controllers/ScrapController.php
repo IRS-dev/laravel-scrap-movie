@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Movie;
 use Weidner\Goutte\GoutteFacade;
 use Illuminate\Support\Collection;
 class ScrapController extends Controller
@@ -20,15 +21,15 @@ class ScrapController extends Controller
          $collection = collect($scrap);
          $title = $collection->take(12);
         //   insert data to database
+        foreach ( $title as $movieTitle) {
+            Movie::create([
+                'title' => $movieTitle
+            ]);        
+                }
+            return redirect('/dashboard/scrap')->with('success','New post has been added');
+    }
 
-        //   return with notification  success/error
-
-        return view('dashboard/build/index')->with([
-            'movieTitle' => $title
-        ]);
-}
-
-public function linkScrap(Request $request)
+public function index()
 {
     return view('admin.scrap.index');
 }

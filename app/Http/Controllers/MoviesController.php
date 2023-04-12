@@ -13,12 +13,23 @@ class MoviesController extends Controller
         return Excel::download(new MoviesExport, 'movie.xlsx');
     }
 
+    public function public()
+    {
+        return view('public.index',[
+            'movies' => Movie::all()
+        ]);
+    }
+    public function admin()
+    {
+        return view('admin.index',[
+            'movies' => Movie::all()
+        ]);
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-
         return view('admin.movie.index',[
             'movies' => Movie::all()
         ]);
@@ -41,10 +52,13 @@ class MoviesController extends Controller
             'title' => ['required','max:255'],
             'actor' => ['required','max:255'],
             'genre' => ['required', 'max:255'],
-            'poster' => ['required'],
+            'poster' => ['required','image'],
             'rating' =>['required'],
             'sinopsis'=> ['required'],
         ]);
+        if($request->file('poster')){
+            $validatedData['poster'] = $request->file('poster')->store('posters');
+        }
         Movie::create($validatedData);
         return redirect('/dashboard/movie')->with('success');
     }

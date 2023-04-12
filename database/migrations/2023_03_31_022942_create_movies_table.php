@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('sinopsis')->default('no sinaposis yet');
             $table->string('genre')->default('no genre yet');
             $table->string('actor')->default('no actor yet');
-            $table->string('poster')->default('default-poster.jpg');
+            $table->string('poster')->default('posters/X1XjODPECzy0yDDLl8vItgZI8WUomGCGiSSbemKl.jpg');
             $table->integer('rating')->default(1);
             $table->timestamps();
         });

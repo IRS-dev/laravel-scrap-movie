@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
             'sinopsis' => Str::random(100),
             'genre' =>  Str::random(5),
             'actor' =>  Str::random(5),
-            'poster' => 'default-poster.jpg',
+            'poster' => 'posters/X1XjODPECzy0yDDLl8vItgZI8WUomGCGiSSbemKl.jpg',
         ]);
         \App\Models\Movie::create([
             'title' => 'Harry Potter',
@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
             'sinopsis' => Str::random(100),
             'genre' =>  Str::random(5),
             'actor' =>  Str::random(5),
-            'poster' => 'default-poster.jpg',
+            'poster' => 'posters/X1XjODPECzy0yDDLl8vItgZI8WUomGCGiSSbemKl.jpg',
         ]);
     }
 }

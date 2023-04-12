@@ -17,13 +17,9 @@ use App\Http\Controllers\ScrapController;
 |
 */
 
-Route::get('/', function(){
-    return view('dashboard/build/index');
-})->name('user');
-Route::get('/dashboard', function () {
-    return view('admin/index
-    ');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/', [MoviesController::class,'public']);
+Route::get('/dashboard',[MoviesController::class,'admin']
+)->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -36,7 +32,7 @@ Route::resource('/dashboard/user', UsersController::class)->middleware('auth');
 // Scrap
 Route::post('/dashboard/scrap/imdb', [ScrapController::class, 'getMovie'])->middleware('auth');
 Route::post('/dashboard/scrap', [ScrapController::class, 'scrapMovie'])->middleware('auth');
-Route::get('/dashboard/scrap',[ScrapController::class, 'linkScrap'])->middleware('auth');
+Route::get('/dashboard/scrap',[ScrapController::class, 'index'])->middleware('auth');
 // Export
 Route::get('/dashboard/userexport',[UsersController::class, 'userExport'])->middleware('auth');
 Route::get('/dashboard/movieexport',[MoviesController::class, 'movieExport'])->middleware('auth');
