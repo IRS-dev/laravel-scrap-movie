@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ScrapController;
 
 /*
@@ -28,6 +29,7 @@ Route::middleware('auth')->group(function () {
 });
 Route::resource('/dashboard/movie', MoviesController::class)->middleware('auth');
 Route::resource('/dashboard/user', UsersController::class)->middleware('auth');
+Route::resource('/dashboard/news',NewsController::class)->middleware('auth');
 
 // Scrap
 Route::post('/dashboard/scrap/imdb', [ScrapController::class, 'getMovie'])->middleware('auth');

@@ -29,6 +29,16 @@ class DatabaseSeeder extends Seeder
             'role' => 0
         ]);
 
+
+        \App\Models\News::create([
+            'title' => 'Movie News Here!!',
+            'body' => Str::random(255)
+        ]);
+        \App\Models\News::create([
+            'title' => 'Breaking News!! marvel Studio..',
+            'body' => Str::random(255)
+        ]);
+
         \App\Models\Movie::create([
             'title' => 'avenger',
             'rating' => 9,
