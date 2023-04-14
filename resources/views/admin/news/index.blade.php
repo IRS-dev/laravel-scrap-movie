@@ -2,7 +2,7 @@
 @section('card')
       <!-- end Navbar -->
       <!-- cards -->
-      <a href="user/create" class="inline-block px-8 py-2 mt-3 ml-12 font-bold leading-normal text-center text-dark align-middle transition-all ease-in bg-white border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85"> &plus; Create News</a>
+      <a href="news/create" class="inline-block px-8 py-2 mt-3 ml-12 font-bold leading-normal text-center text-dark align-middle transition-all ease-in bg-white border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85"> &plus; Create News</a>
 
       {{-- table --}}
       <div class="w-full px-6 py-6 mx-auto">
@@ -42,9 +42,9 @@
                               </div>
                             </td>
                             <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                                <a href="user/{{ $new->id }}" class=" mx-2 text-xs  text-white  font-semibold leading-tight bg-blue-500 rounded px-2"> Detail </a>
-                                <a href="user/{{ $new->id }}/edit" class=" mx-2 text-xs font-semibold leading-tight bg-black rounded px-2 text-white"> Edit </a>
-                                <form action="user/{{ $new->id }}" method="post" class="inline-block">
+                                <a href="news/{{ $new->id }}" class=" mx-2 text-xs  text-white  font-semibold leading-tight bg-blue-500 rounded px-2"> Detail </a>
+                                <a href="news/{{ $new->id }}/edit" class=" mx-2 text-xs font-semibold leading-tight bg-black rounded px-2 text-white"> Edit </a>
+                                <form action="news/{{ $new->id }}" method="post" class="inline-block">
                                     @method('delete')
                                     @csrf
                                     <button type="submit" class=" mx-2 text-xs font-semibold leading-tight bg-slate-700 rounded text-white px-2"> Delete </button>

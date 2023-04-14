@@ -15,8 +15,15 @@ class MoviesController extends Controller
 
     public function public()
     {
+        
         return view('public.index',[
             'movies' => Movie::all()
+        ]);
+    }
+    public function publicShow($id)
+    {
+        return view('public.show',[
+            'movie' => Movie::find($id)
         ]);
     }
     public function admin()

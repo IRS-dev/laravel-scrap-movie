@@ -14,11 +14,13 @@
           <div class="w-full max-w-full px-3 mb-6 mt-2  sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
             <div class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
+                  <a href="/movie/{{$movie->id}}">
                 <img class="w-full rounded-t-2xl" src="{{ asset('storage/'.$movie->poster)}}" alt="profile cover image">
+              </a>
                 <div class="flex flex-row -mx-3">
                   <div class="flex-none w-2/3 max-w-full px-3">
                     <div>
-                        <h6 class="mb-2 mt-2 font-bold dark:text-white">{{ $movie->title }}</h6>
+                      <a href="/movie/{{$movie->id}}" class="mb-2 mt-2 font-bold dark:text-white">{{ $movie->title }}</a>
                       <p class="mb-0 font-sans text-sm font-semibold leading-normal  dark:text-white dark:opacity-60">{{$movie->genre}}</p>
                       <p class="mb-0 dark:text-white dark:opacity-60">
                         <span class="text-sm font-bold leading-normal text-emerald-500">{{$movie->rating}}</span>

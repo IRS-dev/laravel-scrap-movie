@@ -19,6 +19,7 @@ use App\Http\Controllers\ScrapController;
 */
 
 Route::get('/', [MoviesController::class,'public']);
+Route::get('/movie/{id}', [MoviesController::class,'publicShow']);
 Route::get('/dashboard',[MoviesController::class,'admin']
 )->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -33,6 +34,7 @@ Route::resource('/dashboard/news',NewsController::class)->middleware('auth');
 
 // Scrap
 Route::post('/dashboard/scrap/imdb', [ScrapController::class, 'getMovie'])->middleware('auth');
+Route::post('/dashboard/scrap/movie', [ScrapController::class, 'Scrap'])->middleware('auth');
 Route::post('/dashboard/scrap', [ScrapController::class, 'scrapMovie'])->middleware('auth');
 Route::get('/dashboard/scrap',[ScrapController::class, 'index'])->middleware('auth');
 // Export

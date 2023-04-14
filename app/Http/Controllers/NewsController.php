@@ -10,6 +10,13 @@ class NewsController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+     public function publicNews()
+     {
+        return view('public.news.index',[
+            'news' => News::all()
+        ]);
+     }
     public function index()
     {
         return view('admin.news.index',[
@@ -30,23 +37,32 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => ['required','max:255'],
+            'body' => ['required','max:255'],
+        ]);
+        News::create($validatedData);
+        return redirect('/dashboard/news')->with('success','New News has been added');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(News $news)
+    public function show($id)
     {
-        //
+        return view('admin.news.show',[
+            'news' => News::find($id)
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(News $news)
+    public function edit($id)
     {
-        //
+        return view('admin.news.edit',[
+            'news'=> News::find($id)
+        ]);
     }
 
     /**
@@ -54,14 +70,20 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $news)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => ['required','max:255'],
+            'body' => ['required','max:255'],
+        ]);
+        News::where($news->id)->update($validatedData);
+        return redirect('/dashboard/news')->with('success','New News has been added');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(News $news)
+    public function destroy($id)
     {
-        //
+        News::destroy($id);
+        return redirect('/dashboard/news')->with('success delete news!');
     }
 }
