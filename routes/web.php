@@ -17,21 +17,24 @@ use App\Http\Controllers\ScrapController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+// public
 Route::get('/', [MoviesController::class,'public']);
 Route::get('/movie/{id}', [MoviesController::class,'publicShow']);
+Route::get('/news', [NewsController::class, 'newsPublic']);
+Route::get('/news/{id}', [NewsController::class, 'showPublic']);
+
 Route::get('/dashboard',[MoviesController::class,'admin']
 )->middleware(['auth', 'verified'])->name('dashboard');
-
+// auth
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+// admin
 Route::resource('/dashboard/movie', MoviesController::class)->middleware('auth');
 Route::resource('/dashboard/user', UsersController::class)->middleware('auth');
 Route::resource('/dashboard/news',NewsController::class)->middleware('auth');
-
 // Scrap
 Route::post('/dashboard/scrap/imdb', [ScrapController::class, 'getMovie'])->middleware('auth');
 Route::post('/dashboard/scrap/movie', [ScrapController::class, 'Scrap'])->middleware('auth');

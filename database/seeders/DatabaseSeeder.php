@@ -41,43 +41,23 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\Movie::create([
             'title' => 'avenger',
-            'rating' => 9,
             'sinopsis' => Str::random(100),
-            'genre' =>  Str::random(5),
-            'actor' =>  Str::random(5),
-            'poster' => 'posters/X1XjODPECzy0yDDLl8vItgZI8WUomGCGiSSbemKl.jpg',
         ]);
         \App\Models\Movie::create([
             'title' => 'Harry Potter',
-            'rating' => 8,
             'sinopsis' => Str::random(100),
-            'genre' =>  Str::random(5),
-            'actor' =>  Str::random(5),
-            'poster' => 'posters/X1XjODPECzy0yDDLl8vItgZI8WUomGCGiSSbemKl.jpg',
         ]);
         \App\Models\Movie::create([
             'title' => 'Upin dan Ipin',
-            'rating' => 8,
             'sinopsis' => Str::random(100),
-            'genre' =>  Str::random(5),
-            'actor' =>  Str::random(5),
-            'poster' => 'posters/X1XjODPECzy0yDDLl8vItgZI8WUomGCGiSSbemKl.jpg',
         ]);
         \App\Models\Movie::create([
             'title' => 'Breaking Bad',
-            'rating' => 8,
             'sinopsis' => Str::random(100),
-            'genre' =>  Str::random(5),
-            'actor' =>  Str::random(5),
-            'poster' => 'posters/X1XjODPECzy0yDDLl8vItgZI8WUomGCGiSSbemKl.jpg',
         ]);
         \App\Models\Movie::create([
             'title' => 'Toy Story',
-            'rating' => 8,
             'sinopsis' => Str::random(100),
-            'genre' =>  Str::random(5),
-            'actor' =>  Str::random(5),
-            'poster' => 'posters/X1XjODPECzy0yDDLl8vItgZI8WUomGCGiSSbemKl.jpg',
         ]);
     }
 }

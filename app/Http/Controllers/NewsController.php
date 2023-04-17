@@ -11,12 +11,20 @@ class NewsController extends Controller
      * Display a listing of the resource.
      */
 
-     public function publicNews()
+     public function newsPublic()
      {
         return view('public.news.index',[
             'news' => News::all()
         ]);
      }
+
+     public function showPublic($id)
+     {
+        return view('public.news.show',[
+            'news' =>News::find($id)
+        ]);
+     }
+
     public function index()
     {
         return view('admin.news.index',[
