@@ -15,6 +15,6 @@ class Movie extends Model
         return $this->hasMany(Comment::class);
     }
     protected $fillable = [
-        'title','rating','sinopsis','genre','actor','poster'
+        'title','sinopsis','actor','poster','character','img_actor',
     ];
 }

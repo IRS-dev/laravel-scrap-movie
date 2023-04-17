@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 @section('card')
 <div class="w-full p-6 mx-auto">
-  <form action="/dashboard/scrap/imdb" method="post">
+  {{-- <form action="/dashboard/scrap/imdb" method="post">
     @csrf
     <button type="submit" class="inline-block px-8 py-2 mb-4 ml-auto font-bold leading-normal text-center text-dark align-middle transition-all ease-in bg-white border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Generate Imdb Movie  </button>
   </form>
   <form action="/dashboard/scrap/movie" method="post">
     @csrf
     <button type="submit" class="inline-block px-8 py-2 mb-4 ml-auto font-bold leading-normal text-center text-dark align-middle transition-all ease-in bg-white border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Scrap Imdb Movie  </button>
-  </form>
+  </form> --}}
 
     <div class="flex flex-wrap -mx-3">
       <div class="w-full max-w-full px-3 shrink-0 md:w-8/12 md:flex-0">

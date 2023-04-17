@@ -57,7 +57,6 @@ class MoviesController extends Controller
     {
         $validatedData = $request->validate([
             'title' => ['required','max:255'],
-            'actor' => ['required','max:255'],
             'genre' => ['required', 'max:255'],
             'poster' => ['required','image'],
             'rating' =>['required'],
@@ -103,7 +102,6 @@ class MoviesController extends Controller
             'title' => ['required','max:255'],
             'actor' => ['required','max:255'],
             'genre' => ['required', 'max:255'],
-            'rating' =>['required'],
             'sinopsis'=> ['required'],
         ]);
         Movie::where('id',$movie->id)->update($validatedData);

@@ -15,15 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('title')->default('-');
             $table->string('sinopsis')->default('no sinaposis yet');
-            $table->string('genre')->default('no genre yet');
-            $table->string('actor')->default('no actor yet');
-            $table->string('poster')->default('posters/X1XjODPECzy0yDDLl8vItgZI8WUomGCGiSSbemKl.jpg');
-            $table->integer('rating')->default(1);
+            $table->string('poster')->default('https://i.ebayimg.com/images/g/ujkAAOSwYEhjyt9a/s-l1600.jpg');
+            // insert array
             $table->timestamps();
         });
     }
 
     /**
+     * 
+     * 'title','sinopsis','actor','poster','character','img_actor',
      * Reverse the migrations.
      */
     public function down(): void
