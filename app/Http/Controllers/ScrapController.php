@@ -76,23 +76,23 @@ public function scrapMovie(Request $request)
         $actor_name =  ($actor['cast_name']); 
     }
 
-    Movie::create([
-        'title' => $title,
-        'sinopsis' => $desc,
-        'poster' => $poster,
-        'actor' => $actor_name,
-        'img_actor' => $img_actor,
-        'character' => $character
-    ]);
+    // Movie::create([
+    //     'title' => $title,
+    //     'sinopsis' => $desc,
+    //     'poster' => $poster,
+    //     'actor' => $actor_name,
+    //     'img_actor' => $img_actor,
+    //     'character' => $character
+    // ]);
     
-        // Movie::create([
-        //     'title' => $title,
-        //     'sinopsis' => $desc,
-        //     'poster' => $poster,
+        Movie::create([
+            'title' => $title,
+            'sinopsis' => $desc,
+            'poster' => $poster,
 
-        // ]);
+        ]);
 
-        // return redirect('/dashboard/scrap')->with('success','New post has been added');
+        return redirect('/dashboard/scrap')->with('success','New post has been added');
 }
 
 }

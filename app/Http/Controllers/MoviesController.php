@@ -58,13 +58,13 @@ class MoviesController extends Controller
         $validatedData = $request->validate([
             'title' => ['required','max:255'],
             'genre' => ['required', 'max:255'],
-            'poster' => ['required','image'],
+            'poster' => ['required',],
             'rating' =>['required'],
             'sinopsis'=> ['required'],
         ]);
-        if($request->file('poster')){
-            $validatedData['poster'] = $request->file('poster')->store('posters');
-        }
+        // if($request->file('poster')){
+        //     $validatedData['poster'] = $request->file('poster')->store('posters');
+        // }
         Movie::create($validatedData);
         return redirect('/dashboard/movie')->with('success');
     }
